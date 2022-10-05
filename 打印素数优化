@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<math.h>    
+int main(void)
+{
+int sushu;
+
+for (sushu = 101; sushu <= 200; sushu+=2)//因为偶数不可能为素数，直接砍掉一半
+{
+int j;
+for (j = 2; j <= sqrt(sushu); j++)
+{
+if (sushu % j == 0)
+{
+break;
+}
+}
+if (j > sqrt(sushu))
+{
+printf("%d\n", sushu);
+}
+}
+return 0;
+}
