@@ -1,0 +1,22 @@
+include<stdio.h>
+int main(void)
+{
+int sushu;
+
+for (sushu = 100; sushu <= 200; sushu++)
+{
+int j;
+for (j = 2; j < sushu; j++)
+{
+if (sushu % j == 0)
+{
+break;
+}
+}
+if (sushu == j)
+{
+printf("%d\n", sushu);
+}
+}
+return 0;
+}
