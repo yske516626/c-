@@ -7,7 +7,7 @@ for(i = 0; i <= 100; i++)
 {
 if (i % 10 == 9)
 count++;
-else if (i / 10 == 9)
+if (i / 10 == 9)
 count++;
 }
 printf("count = %d\n", count);
