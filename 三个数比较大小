@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main(void)
+{
+int a = 0;
+int b = 0;
+int c = 0;
+scanf("%d %d %d", &a, &b, &c);
+if (a < b)
+{
+int tap = a;
+a = b;           //让a与 b值互换
+b = tap;
+}
+if (a < c)
+{
+int tap = a;
+a = c;
+c = tap;
+}
+if (b < c)
+{
+int tap = b;
+b = c;
+c = tap;
+}
+printf("%d%d%d\n", a, b, c);
+return 0;
+}
