@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<windows.h>
+void menu()
+{
+	printf("******************************\n");
+	printf("***   1.play      0.exit   ***\n");
+	printf("******************************\n");
+}
+
+void game()
+{
+	int guss;
+	int ret = 0;
+	ret = rand() % 100 + 1;
+	printf("游戏开始，请输入你所猜的数字：\n");
+	while (1)
+	{
+		scanf("%d", &guss);
+		if (guss > ret)
+		{
+			printf("你猜大了哦\n请重新输入一个：\n");
+			
+		}
+		else if (guss < ret)
+		{
+			printf("你猜小了哦\n请重新输入一个：\n");
+		}
+		else
+		{
+			printf("恭喜你猜对了");
+			Sleep(2000);
+			break;
+		}
+	}
+}
+
+int main(void)
+{
+	int input = 0;
+	srand((unsigned int)time(NULL));
+	do
+	{
+		menu();
+		printf("请选择是否开始游戏>:");
+		scanf("%d",&input);
+		switch (input)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			printf("退出游戏\n");
+			Sleep(2000);
+			break;
+		default:
+			printf("选择错误\n");
+			Sleep(2000);
+			break;
+		}
+		system("cls");
+		
+	}while(input);
+	return 0;
+}
