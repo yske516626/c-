@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main(void)
+{
+	int digit = 0; //数字 
+	int letter = 0; //字母 
+	int space = 0;  //空格或回车 
+	int other = 0;  //其他 
+	int n = 0;
+	printf("请输入n：");
+	scanf("%d",&n);
+	getchar();
+	printf("输入%d个数（包括空格和回车）",n);
+	for(int i = 0;i < n;i++)
+	{
+		int ch = getchar();
+		if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'B'))
+		letter++;
+		else if(ch > '0' && ch < '9')
+		digit++;
+		else if(ch == 32 || ch == '\n')
+		space++;
+		else
+		other++;
+	}
+	printf("字母的数量：%d\n",letter);
+	printf("数字的数量:%d\n",digit);
+	printf("空格或回车的数量：%d\n",space);
+	printf("其他字符的数量:%d\n",other);
+	return 0; 	
+}
